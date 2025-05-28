@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ searchTerm, setSearchTerm }) => {
+interface HeaderProps {
+  searchTerm: string;
+  setSearchTerm: (value: string) => void;
+}
+
+const Header = ({ searchTerm, setSearchTerm }: HeaderProps) => {
   return (
     <header>
       <div

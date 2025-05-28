@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-
+interface Book {
+    id: number;
+    title: string;
+    author?: string;
+    status?: number;
+  }
+  
 type EditModalProps = {
   open: boolean;
   close: () => void;
