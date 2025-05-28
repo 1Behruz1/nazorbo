@@ -75,7 +75,6 @@ export default function Login() {
       </h2>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-        {/* Username */}
         <div>
           <label
             htmlFor="username"

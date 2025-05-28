@@ -45,19 +45,6 @@ function statusToColor(status?: number) {
   }
 }
 
-function labelToStatus(label: string) {
-  switch (label) {
-    case "New":
-      return 1;
-    case "Reading":
-      return 2;
-    case "Finished":
-      return 3;
-    default:
-      return 1;
-  }
-}
-
 export default function BookCard({ book, onDelete, onUpdate }: BookCardProps) {
   const [hovered, setHovered] = useState(false);
   const [showEdit, setShowEdit] = useState(false);

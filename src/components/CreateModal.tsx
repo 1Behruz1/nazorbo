@@ -20,7 +20,6 @@ interface CreateModalProps {
 
 export default function CreateModal({ open, close, onCreate }: CreateModalProps) {
   const [isbn, setIsbn] = useState("");
-  const [loading, setLoading] = useState(false);
 
 
 const handleSubmit = async () => {
@@ -30,7 +29,6 @@ const handleSubmit = async () => {
     }
     console.log("Submitting ISBN:", isbn); 
   
-    setLoading(true);
     try {
       const res = await API.post("/books", { isbn });
       console.log("Create response:", res.data);
@@ -42,7 +40,6 @@ const handleSubmit = async () => {
       console.error("Error creating book:", error.response?.data || error.message);
       alert("Failed to create book: " + (error.response?.data?.message || error.message));
     } finally {
-      setLoading(false);
     }
   };
   
