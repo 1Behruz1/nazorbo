@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-interface Book {
-    id: number;
-    title: string;
-    author?: string;
-    status?: number;
-  }
+import type { Book } from "../type";
+// interface Book {
+//     id: number;
+//     title: string;
+//     author?: string;
+//     status?: number;
+//   }
+  type EditModalProps = {
+    open: boolean;
+    close: () => void;
+    book: Book;
+    onUpdate: (updatedBook: Partial<Book>) => void;
+  };
   
-type EditModalProps = {
-  open: boolean;
-  close: () => void;
-  book: Book;
-  onUpdate: (updatedBookData: Partial<Book>) => void;
-};
 
 function statusToLabel(status?: number) {
     switch (status) {

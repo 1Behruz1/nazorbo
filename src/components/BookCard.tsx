@@ -2,8 +2,7 @@ import { useState } from "react";
 import API from "../utils/config";
 import DeleteModal from "./DeleteModal";
 import EditModal from "./EditModal";
-
-type Book = {
+export type Book = {
   _id: string;
   title: string;
   author: string;
@@ -13,6 +12,7 @@ type Book = {
   isbn?: string;
   status?: number;
 };
+
 
 type BookCardProps = {
   book: Book;
@@ -44,6 +44,8 @@ function statusToColor(status?: number) {
       return "red";
   }
 }
+
+
 
 export default function BookCard({ book, onDelete, onUpdate }: BookCardProps) {
   const [hovered, setHovered] = useState(false);
@@ -172,7 +174,7 @@ export default function BookCard({ book, onDelete, onUpdate }: BookCardProps) {
         <EditModal
           open={showEdit}
           close={() => setShowEdit(false)}
-          book={book}
+          book={{ ...book, id: book._id }} 
           onUpdate={handleUpdate}
         />
       )}

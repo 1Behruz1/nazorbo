@@ -3,6 +3,7 @@ import API from "../utils/config";
 import BookCard from "./BookCard";
 import CreateModal from "./CreateModal";
 
+
 type Book = {
   _id: string;
   title: string;
@@ -13,6 +14,7 @@ type Book = {
   isbn?: string;
   genre?: string;
 };
+
 
 export default function Books({ searchTerm }: { searchTerm: string }) {
   const [books, setBooks] = useState<Book[]>([]);

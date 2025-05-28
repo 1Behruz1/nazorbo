@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { InternalAxiosRequestConfig } from "axios";
+import type { AxiosRequestConfig, AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
 
 import CryptoJS from "crypto-js";
 
@@ -36,8 +36,10 @@ API.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   const sign = generateSign(method, path, config.data, secret);
 
   if (!config.headers) {
-    config.headers = {};
+    config.headers = {} as AxiosRequestHeaders;
   }
+  
+
 
   config.headers["Key"] = key;
   config.headers["Sign"] = sign;
