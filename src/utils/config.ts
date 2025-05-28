@@ -3,6 +3,8 @@ import type { AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
 
 import CryptoJS from "crypto-js";
 
+
+// GPT qildi ustoz ilojim yoqidi vercelga joylash uchun shu narsa sharakan
 export function setAuthData(userKey: string, userSecret: string) {
   localStorage.setItem("key", userKey);
   localStorage.setItem("secret", userSecret);
@@ -26,7 +28,6 @@ export const API = axios.create({
 
 API.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   const method = (config.method || "get").toUpperCase();
-  // URL constructor'a url ve baseURL veriyoruz
   const url = new URL(config.url ?? "", API.defaults.baseURL);
   const path = url.pathname;
 

@@ -153,7 +153,6 @@ export default function Login() {
           />
         </div>
 
-        {/* Error */}
         {error && (
           <div
             style={{
