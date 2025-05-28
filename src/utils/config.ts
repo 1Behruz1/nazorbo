@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { AxiosRequestConfig, AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
+import type { AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
 
 import CryptoJS from "crypto-js";
 
